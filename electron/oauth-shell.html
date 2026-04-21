@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign in</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      height: 100%;
+      overflow: hidden;
+      background: #f8f8f7;
+    }
+    .bar {
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 10px 0 14px;
+      background: #f8f8f7;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      -webkit-app-region: drag;
+      user-select: none;
+    }
+    .title {
+      font: 500 13px system-ui, -apple-system, 'Segoe UI', sans-serif;
+      color: #0a0a0a;
+    }
+    .close {
+      -webkit-app-region: no-drag;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      margin: 0;
+      padding: 0;
+      border: none;
+      border-radius: 8px;
+      background: transparent;
+      color: #3d3d3a;
+      font-size: 22px;
+      line-height: 1;
+      cursor: pointer;
+    }
+    .close:hover {
+      background: rgba(0, 0, 0, 0.08);
+      color: #0a0a0a;
+    }
+    .close:active {
+      background: rgba(0, 0, 0, 0.12);
+    }
+  </style>
+</head>
+<body>
+  <div class="bar">
+    <span class="title">Sign in</span>
+    <button type="button" class="close" id="closeBtn" aria-label="Close sign-in window">×</button>
+  </div>
+  <script src="./oauth-shell.js"></script>
+</body>
+</html>
