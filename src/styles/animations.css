@@ -1,0 +1,172 @@
+/* =============================================================================
+   HiveMind OS — Keyframe Animations
+   All @keyframes definitions. Referenced by components and utility classes.
+   Timing values use tokens.css custom properties.
+   ============================================================================= */
+
+/* === STATUS DOT PULSE (running agents) ===
+   Scale oscillates 1.0 -> 1.25 -> 1.0
+   Opacity oscillates 1.0 -> 0.5 -> 1.0
+   2.2s infinite cycle */
+@keyframes statusPulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.25);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* === FADE IN === */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* === FADE OUT === */
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* === SLIDE UP — page/component entrance (12px travel) === */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === SLIDE DOWN — component exit === */
+@keyframes slideDown {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+
+/* === SCALE IN — modal entrance === */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* === SCALE OUT — modal exit === */
+@keyframes scaleOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+}
+
+/* === FEED ENTRY — slide in from above (8px travel) === */
+@keyframes feedSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === SHIMMER — skeleton loading === */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* === SPIN — loading spinner === */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* === UTILITY CLASSES === */
+.animate-pulse-status {
+  animation: statusPulse 2.2s infinite;
+}
+
+.animate-fade-in {
+  animation: fadeIn var(--dur-normal) var(--ease-smooth) both;
+}
+
+.animate-fade-out {
+  animation: fadeOut var(--dur-fast) var(--ease-out) both;
+}
+
+.animate-slide-up {
+  animation: slideUp var(--dur-enter) var(--ease-smooth) both;
+}
+
+.animate-slide-down {
+  animation: slideDown var(--dur-fast) var(--ease-out) both;
+}
+
+.animate-scale-in {
+  animation: scaleIn var(--dur-slow) var(--ease-spring) both;
+}
+
+.animate-scale-out {
+  animation: scaleOut var(--dur-fast) var(--ease-out) both;
+}
+
+.animate-feed-in {
+  animation: feedSlideIn var(--dur-normal) var(--ease-smooth) both;
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--color-bg-surface) 25%,
+    var(--color-bg-elevated) 50%,
+    var(--color-bg-surface) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
